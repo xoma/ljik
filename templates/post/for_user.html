@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<p>Записи пользователя <b>{{ user.username }} ({{ posts|length }}) :</b></p>
+<p>Записи пользователя <b><a href="/user/{{ user.username }}">{{ user.username }}</a></b> ({{ posts|length }}):</p>
 
 {% for post in posts %}
     <div class="entry-overview">

@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %} Пользователь {{ user.username }} {% endblock %}
+
+{% block content %}
+
+    <h1 class="title">{{user.username}}</h1>
+
+    <p class="date">Регистрация: {{ user.date_joined|date }}, последний раз был здесь: {{ user.last_login|date }}</p>
+
+    Ведет блоги:<br/>
+    {% if blogs%}
+        {% for blog in blogs %}
+            <a href="/blog/show/{{ blog.id }}">{{ blog.title }}</a> - {{ blog.description }}<br/>
+        {% endfor %}
+    {% endif %}
+
+    <p>
+        Статистика:<br/>
+        Блогов:  {{ blogs|length }}, <a href="/posts/{{ user.username }}">Записей: {{ post_cnt }}</a>, <a href="/quotes/{{ user.username }}">Цитат: {{ quote_cnt }}</a>, <a href="/links/{{ user.username }}">Ссылок: {{ link_cnt }}</a>
+    </p>
+
+
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+    <div class="yashare-auto-init" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,friendfeed,lj"></div>
+
+
+{% endblock %}

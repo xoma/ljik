@@ -12,7 +12,7 @@
 
 		<p class="date">
             Запись <b>#{{post.id}}</b>
-            {{ post.pub_date|date  }}, опубликовал <a href='/{{ post.author.username }}'>{{ post.author.username }}</a> в блоге "<a href="/blog/show/{{ post.blog.id }}">{{ post.blog.title }}</a>"
+            {{ post.pub_date|date  }}, опубликовал <a href='/user/{{ post.author.username }}'>{{ post.author.username }}</a> в блоге "<a href="/blog/show/{{ post.blog.id }}">{{ post.blog.title }}</a>"
         </p>
 
        	<p>{{post.text|safe}}</p>

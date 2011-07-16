@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     (r'^quotes/(?P<user_name>\w+)/$','ljik.quotes.views.for_user'),
     (r'^posts/(?P<user_name>\w+)/$','ljik.post.views.for_user'),
     (r'^links/(?P<user_name>\w+)/$','ljik.links.views.for_user'),
-
+    (r'user/(?P<user_name>\w+)/$','ljik.blog.views.user'),
     (r'quote/',include('ljik.quotes.urls')),
     (r'post/',include('ljik.post.urls')),
     (r'link/',include('ljik.links.urls')),

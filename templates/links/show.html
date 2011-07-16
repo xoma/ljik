@@ -10,7 +10,7 @@
         <h1 class="title">{{ link.title }}</h1>
 
 		<p class="date">
-            Ссылка <b>#{{link.id}}</b> {{ link.pub_date|date  }}, <a href='/{{ link.author.username }}'>{{ link.author.username }}</a> в блоге "<a href="/blog/show/{{ link.blog.id }}">{{ link.blog.title }}</a>"
+            Ссылка <b>#{{link.id}}</b> {{ link.pub_date|date  }}, <a href='/user/{{ link.author.username }}'>{{ link.author.username }}</a> в блоге "<a href="/blog/show/{{ link.blog.id }}">{{ link.blog.title }}</a>"
         </p>
 		
 		{% if link.description %}

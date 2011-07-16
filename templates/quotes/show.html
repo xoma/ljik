@@ -9,7 +9,7 @@
 {% block content %}
 		<p class="date">
             Цитата <b></a>#{{quote.id}}</b>
-            {{ quote.pub_date|date  }}, опубликовал <a href='/{{ quote.author.username }}'>{{ quote.author.username }}</a> в блоге "<a href="/blog/show/{{ quote.blog.id }}">{{ quote.blog.title }}</a>"
+            {{ quote.pub_date|date  }}, опубликовал <a href='/user/{{ quote.author.username }}'>{{ quote.author.username }}</a> в блоге "<a href="/blog/show/{{ quote.blog.id }}">{{ quote.blog.title }}</a>"
         </p>
     
 		<p><b>{{quote.text|safe}}</b></p>
