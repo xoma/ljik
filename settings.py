@@ -43,9 +43,9 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-MEDIA_ROOT = '/home/andrey/learning/Python/Django/ljik/web/'
+MEDIA_ROOT = '/home/andrey/learning/Python/git/ljik/web/'
 
-STATIC_DOC_ROOT = '/home/andrey/learning/Python/Django/ljik/web'
+STATIC_DOC_ROOT = '/home/andrey/learning/Python/git/ljik/web'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -88,7 +88,7 @@ DEBUG_TOOLBAR_CONFIG = {
 ROOT_URLCONF = 'ljik.urls'
 
 TEMPLATE_DIRS = (
-    '/home/andrey/learning/Python/Django/ljik/templates/',
+    '/home/andrey/learning/Python/git/ljik/templates/',
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )

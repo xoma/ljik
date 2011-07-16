@@ -17,7 +17,7 @@
         <div class="detail">
           <h1><a href="/post/show/{{ post.id }}">{{ post.title }}</a></h1>
           <div class="summary">
-              <p>{{ post.get_short_content }}</p>
+              <p>{{ post.get_short_content|safe }}</p>
           </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
         <div class="detail">
           <h1><a href="/link/show/{{ link.id }}">{{ link.title }}</a></h1>
           <div class="summary">
-              <p>{{ link.description }}</p>
+              <p>{{ link.description|safe }}</p>
           </div>
         </div>
     </div>
