@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ blog.title }} {% endblock %}
+
+{% block keywords %} {{ blog.meta_keywords }} {% endblock %}
+
+{% block description %} {{ blog.meta_description }} {% endblock %}
+
+{% block content %}
+
+    <h1 class="title">{{blog.title}}</h1>
+
+    <p class="date">Автор: <a href="/{{ blog.owner }}">{{ blog.owner }}</a>, блог создан: {{ blog.creation_date }}</p>
+
+    <p>{{blog.description}}</p>
+
+    Ссылок {{ links_cnt }}, записей {{ post_cnt }} , цитат {{ quote_cnt }}
+
+    <br/><br/>
+
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+    <div class="yashare-auto-init" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,friendfeed,lj"></div>
+
+
+{% endblock %}	

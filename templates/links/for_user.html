@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<p>Цитаты пользователя <b>{{ user.username }} ({{ links|length }}) :</b></p>
+
+{% for l in links %}
+    <div class="entry-overview">
+        <div class="date">{{ l.pub_date|date }}</div>
+        <div class="detail">
+          <h1><a href="/link/show/{{ l.id }}">{{ l.title }}</a></h1>
+          <div class="summary">
+             <p>{{ l.description|safe }}</p>
+          </div>
+        </div>
+    </div>
+{% empty %}
+  <p><b>{{ user.username }}</b> еще не оставил ни одной цитаты...</p>
+{% endfor %}  
+  
+{% endblock %} 

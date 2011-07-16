@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="keywords" content='{% block keywords %}блог, блого-хостинг, микро-блог{% endblock %}'>
+        <meta name="description" content='{% block description %}Создайте свой блог, публикуйте цитаты, делитесь ссылками{% endblock %}'>
+        <link rel="stylesheet" href="/web/style.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="/web/css.css" type="text/css" media="screen">        
+  
+    <title>{% block title %} ljik.ru - заметки, цитаты, блоги {% endblock %}</title>
+    
+  
+  </head>
+   <body>
+    <div class="container">
+      <div class="header">
+        <a href="/">ljik.ru</a>
+      </div>
+      <div class="navigation">
+        <ul>          
+          </li><li><a href="/posts/xoma">Записи</a>
+          </li><li><a href="/quotes/xoma">Цитаты</a>
+          </li><li><a href="/links/xoma">Ссылки</a>
+        </li></ul>
+      </div>
+
+      <div class="body">
+       {% block content %} {% endblock %}
+      </div>
+    
+      <div class="footer">
+        <!--<div class="pages-list">
+          <ul>
+               <li><a href="/page/about/">О проекте</a></li>
+          </ul>
+        </div>-->
+        <p>ljik.ru</p>
+        <p>© 2010-2011 <a href="http://andrey.opeykin.ru">Опейкин Андрей</a></p>
+      </div>
+    </div>
+
+   <!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter4939792 = new Ya.Metrika(4939792);
+             yaCounter4939792.clickmap(true);
+             yaCounter4939792.trackLinks(true);
+
+        } catch(e) { }
+    });
+})(window, 'yandex_metrika_callbacks');
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><img src="//mc.yandex.ru/watch/4939792" style="position:absolute; left:-9999px;" alt="" /></noscript>
+<!-- /Yandex.Metrika counter -->
+
+   </body>
+</html>

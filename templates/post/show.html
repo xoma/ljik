@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block keywords %}{{ post.get_meta_keywords }}{% endblock %}
+
+{% block description %}{{ post.get_meta_description }}{% endblock %}
+
+{% block content %}
+
+        <h1 class="title">{{ post.title }}</h1>
+
+		<p class="date">
+            Запись <b>#{{post.id}}</b>
+            {{ post.pub_date|date  }}, опубликовал <a href='/{{ post.author.username }}'>{{ post.author.username }}</a> в блоге "<a href="/blog/show/{{ post.blog.id }}">{{ post.blog.title }}</a>"
+        </p>
+
+       	<p>{{post.text|safe}}</p>
+
+		<br>
+
+        {% if post.link_source %}
+            <p class='date'>
+                Источник: <a href="{{ post.link_source }}">{{ post.link_source }}</a>
+            </p>
+        {% endif %}
+
+		<p class="tags">Метки
+             {% for tag in tags %}
+                 <a href="/post/tags/{{ tag.name }}/">{{ tag.name }}</a>,
+             {% endfor %}
+        </p>
+		
+	  <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+      <div class="yashare-auto-init" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,friendfeed,lj"></div>
+    
+{% endblock %}		

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="entry-overview">
+        <div class="date">{{ quote.pub_date|date }}</div>
+        <div class="detail">
+          <h1><a href="/quote/show/{{ quote.id }}">"{{ quote }}"</a></h1>
+          <div class="summary">
+             <p>{{ quote.source }}</p>
+          </div>
+        </div>
+    </div>
+
+    <div class="entry-overview">
+        <div class="date">{{ post.pub_date|date }}</div>
+        <div class="detail">
+          <h1><a href="/post/show/{{ post.id }}">{{ post.title }}</a></h1>
+          <div class="summary">
+              <p>{{ post.get_short_content }}</p>
+          </div>
+        </div>
+    </div>
+
+     <div class="entry-overview">
+        <div class="date">{{ link.pub_date|date }}</div>
+        <div class="detail">
+          <h1><a href="/link/show/{{ link.id }}">{{ link.title }}</a></h1>
+          <div class="summary">
+              <p>{{ link.description }}</p>
+          </div>
+        </div>
+    </div>
+
+{% endblock %}

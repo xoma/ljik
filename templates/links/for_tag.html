@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<p>Ссылки с меткой "<b>{{ tag }}</b>" ({{ links|length }}):</a></p>
+
+{% for link in links %}
+    <div class="entry-overview">
+        <div class="date">{{ link.pub_date|date }}</div>
+        <div class="detail">
+          <h1><a href="/link/show/{{ link.id }}">{{ link.title }}</a></h1>
+          <div class="summary">
+              <p>{{ link.get_short_content|safe }}</p>
+          </div>
+        </div>
+    </div>
+{% endfor %}  
+  
+{% endblock %} 

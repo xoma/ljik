@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ quote.text }} {% endblock %}
+
+{% block keywords %} {{ quote.get_meta_keywords }} {% endblock %}
+
+{% block description %} {{ quote.get_meta_description }} {% endblock %}
+
+{% block content %}
+		<p class="date">
+            Цитата <b></a>#{{quote.id}}</b>
+            {{ quote.pub_date|date  }}, опубликовал <a href='/{{ quote.author.username }}'>{{ quote.author.username }}</a> в блоге "<a href="/blog/show/{{ quote.blog.id }}">{{ quote.blog.title }}</a>"
+        </p>
+    
+		<p><b>{{quote.text|safe}}</b></p>
+
+        	{% if quote.description %}
+
+            <p>{{ quote.description|safe }}</p>
+
+        {% endif %}
+
+		<br>
+
+		<p class='date'>
+			<b>Источник</b>: {{ quote.source }}
+            <br>
+			{% if quote.link_source %}
+			     (<a href="{{ quote.link_source }}">{{ quote.link_source }}</a>)
+			{% endif %}
+		</p>
+		
+		<p class="tags">Метки
+             {% for tag in tags %}
+                 <a href="/quote/tags/{{ tag.name }}/">{{ tag.name }}</a>,
+             {% endfor %}
+        </p>
+		
+	  <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+      <div class="yashare-auto-init" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,friendfeed,lj"></div>
+
+{% endblock %}		

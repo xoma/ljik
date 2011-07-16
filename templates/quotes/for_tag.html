@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<p>Цитаты с меткой  "<b>{{ tag }}</b>" ({{ quotes|length }}) :</a></p>
+
+{% for quote in quotes %}
+    <div class="entry-overview">
+        <div class="date">{{ quote.pub_date|date }}</div>
+        <div class="detail">
+          <h1><a href="/quote/show/{{ quote.id }}">{{ quote.text }}</a></h1>
+          <div class="summary">
+              <p>{{ quote.get_short_content|safe }}</p>
+          </div>
+        </div>
+    </div>
+{% endfor %}  
+  
+{% endblock %} 

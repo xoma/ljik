@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ link.title }}{% endblock %}
+
+{% block keywords %}{{ link.get_meta_keywords }}{% endblock %}
+
+{% block description %}{{ link.get_meta_description }}{% endblock %}
+
+{% block content %}
+        <h1 class="title">{{ link.title }}</h1>
+
+		<p class="date">
+            Ссылка <b>#{{link.id}}</b> {{ link.pub_date|date  }}, <a href='/{{ link.author.username }}'>{{ link.author.username }}</a> в блоге "<a href="/blog/show/{{ link.blog.id }}">{{ link.blog.title }}</a>"
+        </p>
+		
+		{% if link.description %}
+
+            <p>{{ link.description|safe }}</p>
+            
+        {% endif %}
+
+		<br>
+
+		<p class='date'>
+			<b>Ссылка</b>: <a href="{{ link.url }}">{{ link.url }}</a>
+            <br>
+			{% if link.link_source %}
+			     (<a href="{{ link.link_source }}">{{ link.link_source }}</a>)
+			{% endif %}
+		</p>
+		
+		<p class="tags">Метки
+             {% for tag in tags %}
+                 <a href="/link/tags/{{ tag.name }}/">{{ tag.name }}</a>,
+             {% endfor %}
+        </p>
+		
+	  <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+      <div class="yashare-auto-init" data-yashareType="button" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,friendfeed,lj"></div>
+    
+{% endblock %}		
