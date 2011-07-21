@@ -9,7 +9,7 @@ from ljik.links.models import Link
 
 def index(request):
     # получим последние записи всех типов
-    quote = Quote.public.latest()
-    post  = Post.public.latest()
-    link  = Link.public.latest()
+    quote = Quote.objects.latest()
+    post  = Post.objects.latest()
+    link  = Link.objects.latest()
     return  render_to_response('index.html',{'link':link,'post':post,'quote':quote})

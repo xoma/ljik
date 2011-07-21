@@ -93,8 +93,8 @@ class Content(models.Model):
     meta_description = models.TextField(u'описание',help_text=u'введите описание для вашей записи (для поисковиков)',blank=True)
     meta_keywords  = models.TextField(u'ключевые слова',help_text=u'введите ключевые слова для вашей записи (для поисковиков)',blank=True)
     tags = TaggableManager()
-    objects = models.Manager()
-    public  = PublicManager()
+    all_objects  = models.Manager()
+    objects = PublicManager()
 
 
     def get_meta_keywords(self,default=''):

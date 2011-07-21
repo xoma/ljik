@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<p>Цитаты пользователя <b><a href="/user/{{ user.username }}">{{ user.username }}</a></b> ({{ quotes|length }}):</p>
+<p>Цитаты пользователя <b><a href="/user/{{ user_name }}">{{ user_name }}</a></b> ({{ quotes|length }}):</p>
 
 {% for q in quotes %}
     <div class="entry-overview">
